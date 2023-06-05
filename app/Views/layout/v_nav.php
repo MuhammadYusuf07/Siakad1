@@ -1,8 +1,7 @@
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -15,6 +14,7 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
+            <li><a href="#">About</a></li>
           </ul>
           
         </div>
@@ -22,7 +22,10 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav"> 
-            <!-- User Account Menu -->
+          <?php if (session()->get('username') == "") {?>
+            <li><a href="<?= base_url('auth') ?>"><i class="fa fa-sign-in"></i> Login</a></li>
+          <?php }else { ?>  
+
             <li class="dropdown user user-menu">
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -53,6 +56,7 @@
                 </li>
               </ul>
             </li>
+            <?php } ?>
           </ul>
         </div>
         <!-- /.navbar-custom-menu -->
