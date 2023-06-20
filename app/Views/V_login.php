@@ -1,26 +1,38 @@
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Login</b> SIAKAD</a>
+    <a href="<?= base_url() ?>"><b>Login</b> SIAKAD</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Silahkan Login</p>
-
-    <form action="../../index2.html" method="post">
+    <?php
+    $errors = session()->getFlashdata('errors');
+    if (!empty($errors)) {?>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <?php foreach ($errors as $key => $value) { ?>
+            <li><?= esc($value) ?></li>
+          <?php } ?>
+        </ul>
+      </div>
+    <?php } ?>
+    <?php 
+    echo form_open('auth/cek_login');
+     ?>
       <div class="form-group has-feedback">
         <input name="username" class="form-control" placeholder="Username">
         <span class="fa fa-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <select name="level" class="form-control">
-          <option value="">--Hak Akses--</option>
-          <option value="1">-1. Admin</option>
+          <option value="">--Level--</option>
+          <option value="1">1. Admin</option>
           <option value="2">2. Mahasiswa</option>
           <option value="3">3. Dosen</option>
         </select>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input name="password" type="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -30,7 +42,7 @@
         </div>
         <!-- /.col -->
       </div>
-    </form>
+    <?php echo form_close() ?>
 
     
 
