@@ -21,7 +21,7 @@ class FilterAuth implements FilterInterface
     {
         // Do something here
         if (session()->get('log') == true) {
-        return redirect()->to(base_url('home'));
+        return redirect()->to(base_url('admin'));
     }
   }
 }
