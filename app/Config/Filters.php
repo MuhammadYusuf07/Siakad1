@@ -44,6 +44,8 @@ class Filters extends BaseConfig
                 'admin', 'admin/*',
                 'home', 'home/*',
                 '/',
+                'gedung', 'gedung/*',
+                'ruangan', 'ruangan/*',
                 'fakultas', 'fakultas/*',
             ]],
             'toolbar',

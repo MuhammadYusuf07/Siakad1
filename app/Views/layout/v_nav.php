@@ -6,6 +6,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
+                <li><a href="<?= base_url('gedung') ?>">Gedung</a></li>
+                <li><a href="<?= base_url('ruangan') ?>">Ruangan</a></li>
                 <li><a href="<?= base_url('fakultas') ?>">Fakultas</a></li>
                 <li><a href="#">Program Studi</a></li>
                 <li><a href="#">Dosen</a></li>
@@ -32,7 +34,7 @@
                 <!-- The user image in the navbar-->
                 <img src="<?= base_url('foto/'. session()->get('foto')) ?>" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">Alexander Pierce</span>
+                <span class="hidden-xs"><?= session()->get('nama') ?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->

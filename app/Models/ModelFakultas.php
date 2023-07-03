@@ -17,4 +17,18 @@ class ModelFakultas extends Model
   {
     $this->db->table('tbl_fakultas')->insert($data);
   }
+
+  public function edit($data)
+  {
+    $this->db->table('tbl_fakultas')
+      ->where('id_fakultas', $data['id_fakultas'])
+      ->update($data);
+  }
+
+  public function delete_data($data)
+  {
+    $this->db->table('tbl_fakultas')
+    ->where('id_fakultas', $data['id_fakultas'])
+    ->delete($data);
+  }
 }
